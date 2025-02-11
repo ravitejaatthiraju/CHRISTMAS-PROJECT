@@ -1,0 +1,226 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-image: url('web cover.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+@keyframes blink-lights {
+    0% { filter: brightness(0.1); }
+    100% { filter: brightness(1); }
+}
+
+.snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: rgb(197, 242, 252);
+    font-size: 1em;
+    opacity: 0.8;
+    animation: fall 10s linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(90vh); }
+}
+.santa{
+    position: absolute;
+    top: 3cm;
+    left: 50px; /* Adjust based on Santa image size */
+    transform: translateY(-360%);
+    width: 330px;
+    height: auto;
+    pointer-events: none;
+    animation: santa-fly 30s linear infinite;
+}
+
+@keyframes santa-fly {
+    0% { transform: translateX(0) translateY(-50%); }
+    100% { transform: translateX(120vw) translateY(-50%); }
+}
+.banner{
+    position: absolute;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    top: 4cm;
+    color: rgb(231, 84, 16);
+    text-shadow: 3px 3px 2px rgb(0, 0, 0);
+    left: -9%; /* Adjust based on Santa image size */
+    transform: translateY(-360%);
+    width: 20px;
+    height: 2cm;
+    animation: santa-fly 30s linear infinite;
+}
+
+.sparkles {
+    position: absolute;
+    top: 2cm;
+    left: 0px; /* Adjust based on Santa image size */
+    transform: translateY(-360%);
+    width: 7px;
+    height: 7px;
+    pointer-events: none;
+    animation: santa-fly 30s linear infinite;
+}
+
+.sparkle {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: rgb(238, 255, 0);       
+    border-radius: 15%;
+    animation: sparkle-blink 1s infinite alternate ease-in-out, sparkle-move 2s infinite linear;
+}
+
+@keyframes sparkle-blink {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0.5; transform: scale(1.5); }
+}
+
+@keyframes sparkle-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50px, 200px); }
+}
+.gift-box {
+    position: absolute;
+    top: 10cm;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    background: url('santa holding gift.png') no-repeat center center;
+    background-size: cover;
+}
+.modal {
+    position: fixed;
+    color: white;
+    top: 8cm;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.183);
+    border-radius: 20px;
+    display: none;
+    
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal input {
+    margin-top: 10px;
+    padding: 5px;
+    width: 100%;
+}
+.text {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    left: 5cm;
+    position: absolute;
+    top: 15cm;
+    left: 36.3%;
+    color: rgb(61, 253, 3);
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.873);
+}
+.tree {
+    position: absolute;
+    top:13.1cm;
+    left: 3%;
+    position: relative;
+    width: 260px;
+    height: 350px;
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+    margin-top: 20px;
+  }
+  
+  .wire {
+    position: absolute;
+    top: 1cm;
+    color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .bulb {
+    top:1cm;
+    left:50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: red;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    animation: lightUp 1s infinite alternate;
+  }
+  
+  @keyframes lightUp {
+    from {
+        opacity: 0.9;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+  }
+  #cardContainer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: rgb(0, 0, 0); /* Text color for better visibility */
+    font-weight: bold;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0); /* Text readability over images */
+    background-size: cover; /* Ensure the image covers the card fully */
+    background-position: center; /* Center the background image */
+    border-radius: 8px; /* Optional: rounded corners for cards */
+    border: 1px solid #cccccc; /* Optional: border for better visuals */
+}
+
+/* Background images for each card */
+.card[data-id="1"] {
+    background-image: url('edit card.jpg'); /* Replace with your image URL */
+}
+
+.card[data-id="2"] {
+    background-image: url('edit card.jpg'); /* Replace with your image URL */
+}
+
+.card[data-id="3"] {
+    background-image: url('edit card.jpg'); /* Replace with your image URL */
+}
+
+.card[data-id="4"] {
+    background-image: url('edit card.jpg'); /* Replace with your image URL */
+}
+
+.card[data-id="5"] {
+    background-image: url('edit card.jpg'); /* Replace with your image URL */
+}
